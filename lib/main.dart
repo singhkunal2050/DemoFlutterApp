@@ -53,6 +53,7 @@ class _MyAppState extends State<_MyApp> {
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
+              color: Color.fromRGBO(144, 155, 222, .5),
             ),
             RaisedButton(
               child: Text('Answer 2'),
