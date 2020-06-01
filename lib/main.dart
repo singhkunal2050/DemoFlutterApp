@@ -10,14 +10,25 @@ void main() {
 // Scaffold is a basic page widget
 // to explore all the positional params use ctrl + space inside Scaffold( here  )
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget{
+  
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+
+}
+
+class MyAppState extends State<MyApp>{
   var qIndex = 0;
 
-
   void answerQuestion() {
+    setState(() {
+      qIndex=(qIndex + 1)%3;   
+    });
     print("pressed!!");
     print(qIndex);
-    qIndex=(qIndex + 1)%2;
   }
 
   @override // decorator which tells that we are overriding a class (syntactical sugar)
