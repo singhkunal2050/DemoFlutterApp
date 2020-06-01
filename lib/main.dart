@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import './Question.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(_MyApp());
 }
 
 // short hand of single line function
@@ -12,23 +13,23 @@ void main() {
 // a steteful widget  has one function to overridde ie  createstate which returns State
 // object which is connected to a stateful widget
 // createstate returns the AppState obj which holds the state of widget
+// to make anything private we can start the name of the class/funct/var by an underscore
+// eg _myApp
 
-
-
-class MyApp extends StatefulWidget {
+class _MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  var qIndex = 0;
+class _MyAppState extends State<_MyApp> {
+  var _qIndex = 0;
 
   void answerQuestion() {
     setState(() {
-      qIndex = (qIndex + 1) % 3;
+      _qIndex = (_qIndex + 1) % 3;
     });
     print("pressed!!");
     print(qIndex);
@@ -48,7 +49,7 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(questions[qIndex]),
+            Text(questions[_qIndex]),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
