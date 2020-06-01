@@ -32,7 +32,7 @@ class _MyAppState extends State<_MyApp> {
       _qIndex = (_qIndex + 1) % 3;
     });
     print("pressed!!");
-    print(qIndex);
+    print(_qIndex);
   }
 
   @override // decorator which tells that we are overriding a class (syntactical sugar)
@@ -49,7 +49,7 @@ class _MyAppState extends State<_MyApp> {
         ),
         body: Column(
           children: [
-            Text(questions[_qIndex]),
+            Question(questions[_qIndex]),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
