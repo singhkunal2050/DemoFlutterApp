@@ -9,23 +9,26 @@ void main() {
 
 // Scaffold is a basic page widget
 // to explore all the positional params use ctrl + space inside Scaffold( here  )
+// a steteful widget  has one function to overridde ie  createstate which returns State
+// object which is connected to a stateful widget
+// createstate returns the AppState obj which holds the state of widget
 
-class MyApp extends StatefulWidget{
-  
+
+
+class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return MyAppState();
   }
-
 }
 
-class MyAppState extends State<MyApp>{
+class MyAppState extends State<MyApp> {
   var qIndex = 0;
 
   void answerQuestion() {
     setState(() {
-      qIndex=(qIndex + 1)%3;   
+      qIndex = (qIndex + 1) % 3;
     });
     print("pressed!!");
     print(qIndex);
@@ -52,7 +55,8 @@ class MyAppState extends State<MyApp>{
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: () => print('Answer 2 chosen'),           // for single line funct
+              onPressed: () =>
+                  print('Answer 2 chosen'), // for single line funct
             ),
             RaisedButton(
               child: Text('Answer 3'),
