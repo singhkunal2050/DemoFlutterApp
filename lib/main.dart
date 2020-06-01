@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   void answerQuestion() {
     print("pressed!!");
     print(qIndex);
-    qIndex=(qIndex + 1)%3;
+    qIndex=(qIndex + 1)%2;
   }
 
   @override // decorator which tells that we are overriding a class (syntactical sugar)
