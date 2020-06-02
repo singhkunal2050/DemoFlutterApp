@@ -40,7 +40,7 @@ class _MyAppState extends State<_MyApp> {
 
   @override // decorator which tells that we are overriding a class (syntactical sugar)
   Widget build(BuildContext ctx) {
-    var questions = [
+    const questions = [
       {
         "questionText" : "Whats your name?",
         "answers" : ['Kunal' , 'Aman' , 'Abhi' , 'indra'],
@@ -57,18 +57,20 @@ class _MyAppState extends State<_MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("MY First App"),
+          title: Text("KSR First App"),
         ),
         body: Column(
           children: [
             Question(questions[_qIndex]['questionText']),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
+            // Answer(_answerQuestion),
+            // Answer(_answerQuestion),
+            // Answer(_answerQuestion),
+            // Answer(_answerQuestion),
             // OR 
 
-            // questions.map((question) {})
+            ...(questions[_qIndex]['answers'] as List<String>).map((answer) {
+              return Answer(_answerQuestion , answer);
+            }).toList()
 
 
           ],
