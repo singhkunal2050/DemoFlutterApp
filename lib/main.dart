@@ -41,9 +41,18 @@ class _MyAppState extends State<_MyApp> {
   @override // decorator which tells that we are overriding a class (syntactical sugar)
   Widget build(BuildContext ctx) {
     var questions = [
-      "Whats your name?",
-      "Whats your age?",
-      "Whats your number?",
+      {
+        "questionText" : "Whats your name?",
+        "answers" : ['Kunal' , 'Aman' , 'Abhi' , 'indra'],
+      },
+      {
+        "questionText" : "Whats your age?",
+        "answers" : ['15' , '18' , '22' , '25'],
+      },
+      {
+        "questionText" : "Whats your number?",
+        "answers" : ['12345' , '54321' , '25874' , '15975'],
+      }     
     ];
     return MaterialApp(
       home: Scaffold(
@@ -52,10 +61,16 @@ class _MyAppState extends State<_MyApp> {
         ),
         body: Column(
           children: [
-            Question(questions[_qIndex]),
+            Question(questions[_qIndex]['questionText']),
             Answer(_answerQuestion),
             Answer(_answerQuestion),
             Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            // OR 
+
+            // questions.map((question) {})
+
+
           ],
         ),
       ),
