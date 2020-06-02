@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myApp/Answer.dart';
+
 import './Question.dart';
+import './Answer.dart';
 
 void main() {
   runApp(_MyApp());
@@ -27,7 +30,7 @@ class _MyApp extends StatefulWidget {
 class _MyAppState extends State<_MyApp> {
   var _qIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
       _qIndex = (_qIndex + 1) % 3;
     });
@@ -50,23 +53,9 @@ class _MyAppState extends State<_MyApp> {
         body: Column(
           children: [
             Question(questions[_qIndex]),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: answerQuestion,
-              color: Color.fromRGBO(144, 155, 222, .5),
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () =>
-                  print('Answer 2 chosen'), // for single line funct
-            ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: () {
-                ///body                                             // anon funct
-                print('Answer 3 chosen');
-              },
-            ),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ),
       ),
