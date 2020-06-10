@@ -16,7 +16,7 @@ class Result extends StatelessWidget {
       FlatButton(
         child: Text(
           "reset",
-          style: TextStyle(fontSize: 40, backgroundColor: Colors.amber),
+          style: TextStyle(fontSize: 40, backgroundColor: Colors.cyan),
         ),
         onPressed: this.reset,
       )
